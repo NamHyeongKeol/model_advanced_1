@@ -3,7 +3,7 @@ class AddNovelIdToPage < ActiveRecord::Migration
     # rake db:migrate:up VERSION=20160519185454
     add_column :pages, :novel_id, :integer, null: false, default: 0
     Page.all.each do |p|
-      p.novel_id = p.book_id
+      Page.update(p.id, novel_id: p.book_id)
     end
   end
 
