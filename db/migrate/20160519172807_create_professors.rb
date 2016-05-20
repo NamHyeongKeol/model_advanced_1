@@ -1,6 +1,6 @@
-class CreateUniversities < ActiveRecord::Migration
+class CreateProfessors < ActiveRecord::Migration
   def change
-    create_table :universities do |t|
+    create_table :professors do |t|
       t.string :name, null: false, default: ""
 
       t.timestamps null: false

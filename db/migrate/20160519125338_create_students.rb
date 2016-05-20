@@ -4,6 +4,7 @@ class CreateStudents < ActiveRecord::Migration
       t.integer :university_id, null: false, default: 0
       t.string :name, null: false, default: ""
       t.string :student_number, null: false, default: ""
+      t.string :major, null: false, default: ""
 
       t.timestamps null: false
     end
