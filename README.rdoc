@@ -5,24 +5,35 @@ c9 워크스페이스를 만들 때 깃헙 URL에 다음을 추가해주세요.
 <tt>https://github.com/NamHyeongKeol/model_advanced_1.git</tt>
   
 그리고 먼저 다음을 따라하셈  
+
 <tt>rake db:migrate</tt>
   
 그리고 다음을 따라하셈  
+
 <tt>rake db:seed</tt>
   
-그리고 novel_id를 추가하고 싶으면 다음을 순서대로 따라하셈  
+그리고 novel_id를 추가하고 싶으면 다음을 순서대로 따라하셈 
+
 <tt>mv db/migrate/_20160519185454_add_novel_id_to_page.rb db/migrate/20160519185454_add_novel_id_to_page.rb</tt>  
+
 <tt>rake db:migrate:up VERSION=20160519185454</tt>  
+
 <tt>rake db:migrate:down VERSION=20160519185454</tt>  
+
 <tt>mv db/migrate/20160519185454_add_novel_id_to_page.rb db/migrate/_20160519185454_add_novel_id_to_page.rb</tt>
   
 다시 novel_id를 지우고 book_id로 돌아가고 싶으면 다음을 순서대로 따라하셈  
+
 <tt>mv db/migrate/_20160520080940_add_book_id_to_page.rb db/migrate/20160520080940_add_book_id_to_page.rb</tt>  
+
 <tt>rake db:migrate:up VERSION=20160520080940</tt>  
+
 <tt>rake db:migrate:down VERSION=20160520080940</tt>  
+
 <tt>mv db/migrate/20160520080940_add_book_id_to_page.rb db/migrate/_20160520080940_add_book_id_to_page.rb</tt>  
   
 db 관련 rake 작업을 처음부터 다시하고 싶으면 다음으로 한꺼번에 가능  
+
 <tt>rake db:drop; rake db:migrate; rake db:seed</tt>  
   
 <tt>rake doc:app</tt>.
